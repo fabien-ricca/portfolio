@@ -1,180 +1,367 @@
-
-/************************************************ GÉNÉRALES **************************************************/
-
-html{
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    background-color:#6290C8;
-    scroll-behavior: smooth;
+html, body{
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	scroll-behavior: smooth;
 }
 
-section{
-    text-align: center;
-    align-items: 20px;
-    border-width: 7px;
-    border-style: ridge;
-    border-color: #FEEFDD;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    background-color: #BFD7FF;
+body{
+	display: flex;
+	flex-direction: column;
 }
 
-h1{
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 3rem;
+body::-webkit-scrollbar {
+	display: none;
+  }
+
+header{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	min-height: 10vh;
+	display: flex;
+	background-color: black;
 }
 
-h2{
-    font-family: 'Josefin Slab', serif;
-    font-size: 2rem;
-    text-decoration: underline;
-    text-align: start;
-    margin-top: 15px;
-    margin-bottom: 50px;
-    margin-left: 10px;
+main{
+	width: 100vw;
+	height: fit-content;
+	display: flex; 
+	flex-direction: column;
 }
 
-h3{
-    font-family: 'Pavanam', sans-serif;
+article{
+	display: flex;
+	flex-direction: column;
 }
 
-P, a{
-    font-family: 'Pavanam', sans-serif;
-    font-size: 1.1rem;
-    text-align: center;
+ h1, h2{
+	font-family: 'Lora', serif;
+ }
+
+ a{
+	font-family: 'Montserrat', sans-serif;
+ }
+
+ p{
+	font-family: 'Signika Negative', sans-serif;
+ }
+
+
+/***************************************************************** INDEX **************************************************************/
+
+#home{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-self: center;
+	justify-self: center;
+	justify-content: center;
+	align-items: center;
 }
 
-ul{
-    list-style-type: none;
-    text-align: center;
+#button-home {
+	height: 5rem;
+	width: 5rem;
+	background: black;
+	border: none;
+    color: white;
+    font-size: 1em;
+	border-radius: 50%;
+    cursor: pointer;
+	animation: pulse 3s infinite;
 }
 
-
-/************************************************ IMAGES **************************************************/
-
-.profil-picture{
-    border-radius: 20%;
-    float: center;
-    border-width: 5px;
-    border-style: ridge;
-    border-color: black;
-    margin-bottom: 10px;
-}
-
-.logo-python{
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.logo-html{
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.logo-css{
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.logo-bash{
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.logo-linux{
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.picto-mail{
-    max-width: 80px;
-    max-height: 80px;
-}
-
-.picto-linkedin{
-    max-width: 70px;
-    max-height: 70px;
-}
-
-.picto-github{
-    max-width: 140px;
-    max-height: 140px;
-    height: 100%;
-}
-
-.map{
-    max-width: 380px;
-    max-height: 300px;
-    border-width: 5px;
-}
-
-#border-map{
-    position: relative;
-    left: 250px;
-    align-items: center;
-    max-width: 379px;
-    max-height: 299px;
-    border-width: 5px;
-    border-style: ridge;
-    border-color: black;
+#button-home a{
+	text-decoration: none;
+	color: white;
 }
 
 
-/************************************************ NAVIGATION **************************************************/
-
-#nav{
-    margin-top: 20px;
-    margin-bottom: 10px;
+@keyframes pulse {
+	0% {
+		transform: scale(2.1);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.827);
+	}
+	
+	70% {
+		transform: scale(2);
+		box-shadow: 0 0 0 60px rgba(0, 0, 0, 0);
+	}
+	
+	100% {
+		transform: scale(2);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
 }
 
-#nav a{ 
-    font-weight : bold;
-    margin-left: 25px;  
-    margin-right: 10px;
-    margin-top: 100px;
-    margin-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    text-decoration: none;
+
+/***************************************************************** ACCUEIL **************************************************************/
+/****************************** Header ****************************/
+
+#logo{
+	display: flex;
+	justify-content: start;
+}
+
+#logo img{
+	margin-left: 1em;
+	max-height: 100%;
+	transition: 0.6s;
+}
+
+#logo img:hover{
+	transform: rotate(-10deg);
+	transition: 0.3s;
+}
+
+nav{
+	width: 70vw;
+	align-self: center;
+	display: flex;
+	justify-content: space-around;
+}
+
+nav a{
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.3em;
+	color: white;
+	transition: 0.6s;
 }
 
 nav a:hover{
-    font-size: large;
+	transform: scale(0.9);
+	transition: 0.3s;
+}
+
+/****************************** Title ****************************/
+#bienvenue{
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#bienvenue h1{
+	font-size: 9em;
+	animation: reveal 30s;
+}
+
+@keyframes reveal {
+    0% {
+		opacity:0;
+	}
+    20% {
+		opacity:1;
+	}
+    80% {
+		opacity:1;
+	}
+    100% {
+		opacity:0;
+	}
 }
 
 
-/************************************************ BODY **************************************************/
-
-#profil p{
-    margin-bottom: 50px;
+/****************************** A propos ****************************/
+#apropos{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: black;
 }
 
-#comp img{
-    margin-left: 20px;  
-    margin-right: 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+#apropos h2{
+	margin-left: 0.5em;
+	color: white;
+	font-size: 5em;
+}
+
+#apropos a{
+	margin-top: 2em;
+	align-self: center;
+	text-decoration: none;	
+	color: white;
+	font-size: 1.5em;
+	transition: 0.2s;
+}
+
+#apropos a:hover{
+	color: rgb(200, 190, 190);
+	transition: 0.3s;
+	transform: scale(1.02);
+}
+
+#texte{
+	margin-left: 5em;
+	margin-right: 5em;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+	line-height: 2em;
+}
+
+#aide{
+	margin-right: 1em;
+	color: white;
+	align-self: flex-end;
 }
 
 
-/************************************************ FOOTER **************************************************/
-
-#contact img{
-    margin-left: 15px;
-    margin-right: 15px;
+/***************************************************************** PROJETS **************************************************************/
+/****************************** Side Bar ****************************/
+#side_bar{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	position: fixed;
+	width: 15em;
+	min-height: fit-content;
+	margin-top: 6em;
+	margin-left: 2em;
+	padding: 2em;
+	background-color: black;
+	border-radius: 3px;
+	box-shadow: 1px 13px 21px 3px rgba(95, 92, 92, 0.68);
 }
 
-#haut{
-    position: fixed;
-    width: 25px;
-    height: 25px;
-    bottom: 75px;
-    right: 90px;
-  }
+#side_bar a{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	font-size: 1.1em;
+	transition: 0.2s;
+}
 
-  #haut img{
-    width: 100px;
-    height: 100px;
-  }
+#side_bar a:hover{
+	color: rgb(200, 190, 190);
+	transition: 0.3s;
+	transform: scale(1.05);
+}
+
+/****************************** Projets (polaroid ****************************/
+#project-container{
+	display: flex;
+	justify-content: space-around;
+	width: 60vw;
+	margin-left: 30em;
+	padding-bottom: 5em;
+	
+}
+
+.project{
+	width: 23em;
+	height: fit-content;
+	margin-top: 3em;
+	padding-bottom: 3em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 3px solid black;
+	box-shadow: 1px 13px 30px 3px rgba(114, 112, 112, 0.68);
+}
+
+.project h2{
+	font-size: 2em;
+}
+
+.project img{
+	max-width: 80%;
+	max-height: 90%;
+}
+
+.project p{
+	margin: 2em;
+	padding: 0.5em;
+	text-align: center;
+	font-size: 1em;
+	line-height: 1.5em;
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	border-radius: 3px;
+}
+
+.project-liens{
+	margin-top: 0.5em;
+	display: flex;
+	justify-content: space-around;
+	width: 20vw;
+}
+
+.project-liens a{
+	padding: 0.3em;
+	text-decoration: none;
+	color: black;
+	border: 1px solid black;
+	transition: 0.3s;
+}
+
+.project-liens a:hover{
+	background-color: black;
+	color: white;
+	transition: 0.5s;
+}
+
+
+/***************************************************************** CONTACT **************************************************************/
+/****************************** Contact-box ****************************/
+#contact-container{
+	margin-top: 3em;
+	height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+	align-items: center;
+	justify-self: center;
+    flex-wrap: wrap;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.contact-box{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.contact-box a{
+    text-decoration: none;
+    color: black;
+}
+
+.contact-box a:hover{
+    text-decoration: underline;
+
+}
+
+.contact-box i{
+    padding: 0.5em;
+    color: black;
+    transition: 0.8s;
+	font-size: 2em;
+}
+
+.contact-box i:hover{
+    transform: scale(1.3);
+    transition: 0.8s;
+}
+
+#map{
+	margin-top: 1em;
+    align-self:  center;
+    height: 25em;
+    width: 35em;
+    border-radius: 10px;
+    transition: 0.5s;
+}
