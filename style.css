@@ -119,6 +119,7 @@ nav{
 	width: 70vw;
 	align-self: center;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
 }
 
@@ -250,6 +251,7 @@ nav a:hover{
 /****************************** Projets (polaroid ****************************/
 #project-container{
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
 	width: 60vw;
 	margin-left: 30em;
@@ -369,4 +371,131 @@ nav a:hover{
     width: 35em;
     border-radius: 10px;
     transition: 0.5s;
+}
+
+
+/***********************************************************************************************************************************************/
+/************************************************************** MEDIA QUERIES ******************************************************************/
+/***********************************************************************************************************************************************/
+
+
+
+@media (max-width: 900px) {
+body{
+	width: 100vw;
+}
+
+header{
+	display: flex;
+	justify-content: center;
+	min-height: 5vh;
+	min-width: 100vw;
+	background-color: black;
+}
+
+
+h1{
+	text-align: center;
+}
+
+
+/***************************************************************** ACCUEIL **************************************************************/
+/****************************** Header ****************************/
+
+#logo{
+	display: none;
+}
+
+#logo img{
+	margin-left: 1em;
+	max-height: 100%;
+	transition: 0.6s;
+}
+
+#logo img:hover{
+	transform: rotate(-10deg);
+	transition: 0.3s;
+}
+
+nav{
+	width: 70vw;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+nav a{
+	padding-left: 1em;
+	text-decoration: none;
+	font-size: 1em;
+	color: white;
+	transition: 0.6s;
+}
+
+
+/****************************** Title ****************************/
+#bienvenue{
+	min-height: 91vh;
+}
+
+#bienvenue h1{
+	font-size: 3em;
+	animation: reveal 30s;
+}
+
+@keyframes reveal {
+    0% {
+		opacity:0;
+	}
+    20% {
+		opacity:1;
+	}
+    80% {
+		opacity:1;
+	}
+    100% {
+		opacity:0;
+	}
+}
+
+
+/****************************** A propos ****************************/
+#apropos{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: black;
+}
+
+#apropos h2{
+	margin-left: 0;
+	color: red;
+	text-align: center;
+	font-size: 2.5em;
+}
+
+#texte{
+	font-size: 1em;
+	color: white;
+	line-height: 2em;
+}
+
+#aide{
+	margin-right: 1em;
+	color: white;
+	align-self: flex-end;
+}
+
+#cv{
+	margin-top: 2em;
+	margin-bottom: 1em;
+	align-self: center;
+	text-decoration: none;	
+	font-size: 1.3em;
+	transition: 0.2s;
+	color: white;
+	padding: 0.2em;
+	border: 2px solid white;
+}
+
 }
